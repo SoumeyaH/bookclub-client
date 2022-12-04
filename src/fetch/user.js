@@ -16,13 +16,3 @@ export const getUser = async (pathname, body) => {
     throw Error({ message: "Something went wrong. Please try again." });
   }
 };
-
-// {
-//   message: "No token. User not authorized";
-// }
-// {
-//   message: "This username is incorrect";
-// }
-// {
-//   message: "This password is incorrect";
-// }

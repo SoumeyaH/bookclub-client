@@ -1,8 +1,11 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { getUser } from "../../fetch/user";
 
 const UserEntryForm = ({ pathname }) => {
+  const navigate = useNavigate();
+
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -32,10 +35,13 @@ const UserEntryForm = ({ pathname }) => {
           userId: response.userId,
         })
       );
+      navigate("/dashboard");
+      window.location.reload();
+      setSubmitted(true);
+    } else {
+      setSubmitted(false);
+      setError(response.message);
     }
-
-    setSubmitted(false);
-    setError(response.message);
   };
   return (
     <form onSubmit={handleSubmit}>
