@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Prompt:wght@300&family=Taviraj:wght@500&family=Varela+Round&display=swap");
+
+* {
+  font-family: Prompt;
+  font-size: 16px;
+}
+
+h1 {
+  font-family: "Taviraj";
+  font-size: 4rem;
+}
+
+h2 {
+  font-family: "Cormorant Garamond";
+  font-size: 2.5rem;
+}

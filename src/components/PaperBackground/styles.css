@@ -1,0 +1,25 @@
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url(../../assets/images/books-stack.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.paper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url(../../assets/images/ripped-paper.jpg);
+  background-size: cover;
+  background-position: center;
+  mix-blend-mode: lighten;
+  filter: brightness(1.2);
+}

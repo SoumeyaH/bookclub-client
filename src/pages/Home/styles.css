@@ -1,0 +1,9 @@
+.titles-container {
+  z-index: 2;
+  position: absolute;
+  margin-top: 100px;
+}
+
+.background-container {
+  z-index: -2;
+}

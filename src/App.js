@@ -5,12 +5,14 @@ import SignupPage from "./pages/Signup";
 import LoginPage from "./pages/Login";
 import DashboardPage from "./pages/Dashboard";
 import ProtectedRoutes from "./utils/ProtectedRoutes";
+import NavBar from "./components/Navbar";
 
 function App() {
   return (
     <div className="App">
       <Router>
         <UserContextProvider>
+          <NavBar />
           <Routes>
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignupPage />} />
