@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 
 import { getUser } from "../../fetch/user";
 
+import "./styles.css";
+
 const UserEntryForm = ({ pathname }) => {
   const navigate = useNavigate();
 
@@ -44,35 +46,74 @@ const UserEntryForm = ({ pathname }) => {
     }
   };
   return (
-    <form onSubmit={handleSubmit}>
-      {!forgotUsername && (
-        <input
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          type="text"
-          placeholder="Username"
-        />
-      )}
+    <form
+      onSubmit={handleSubmit}
+      className={`form-container ${error ? "form-error" : ""}`}
+    >
+      <div className="something">
+        {!forgotUsername && (
+          <div className="input-container">
+            <input
+              type="text"
+              id="username"
+              value={username}
+              onChange={(e) => {
+                setUsername(e.target.value);
+                setError("");
+              }}
+              className={`inputBox ${username ? "valid-input" : ""}`}
+            />
 
-      {pathname === "/login" && !forgotUsername && (
-        <button onClick={() => setForgotUsername(true)}>forgot username</button>
-      )}
+            <label htmlFor="username" className="label required">
+              Username
+            </label>
+            <span className="line"></span>
+          </div>
+        )}
+
+        {pathname === "/login" && !forgotUsername && (
+          <button onClick={() => setForgotUsername(true)}>
+            forgot username
+          </button>
+        )}
+      </div>
 
       {(pathname === "/signup" || forgotUsername) && (
-        <input
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          type="email"
-          placeholder="Email"
-        />
+        <div className="input-container">
+          <input
+            type="text"
+            id="email"
+            value={email}
+            onChange={(e) => {
+              setEmail(e.target.value);
+              setError("");
+            }}
+            className={`inputBox ${email ? "valid-input" : ""}`}
+          />
+
+          <label htmlFor="email" className="label required">
+            Email
+          </label>
+          <span className="line"></span>
+        </div>
       )}
 
-      <input
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        type="password"
-        placeholder="Password"
-      />
+      <div className="input-container">
+        <input
+          type="password"
+          id="password"
+          value={password}
+          onChange={(e) => {
+            setPassword(e.target.value);
+            setError("");
+          }}
+          className={`inputBox ${password ? "valid-input" : ""}`}
+        />
+        <label htmlFor="password" className="label required">
+          Password
+        </label>
+        <span className="line"></span>
+      </div>
 
       {error && <p>{error}</p>}
 

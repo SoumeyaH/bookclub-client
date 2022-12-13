@@ -10,13 +10,13 @@
   list-style: none;
 }
 
-.list-items-container {
+.link-items-container {
   flex-basis: 50%;
   display: flex;
   justify-content: space-evenly;
 }
 
-.list-item {
+.link-item {
   color: #fff;
   text-align: center;
   margin: 0.5rem;
@@ -26,7 +26,7 @@
   position: relative;
 }
 
-.list-item:hover {
+.link-item:hover {
   background: #1e3c68;
 }
 
@@ -51,7 +51,7 @@ ul li ul.dropdown li {
   margin-top: 0.5rem;
 }
 
-.list-item:hover .dropdown {
+.link-item:hover .dropdown {
   display: block;
 }
 
