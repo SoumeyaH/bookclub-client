@@ -1,5 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Prompt:wght@300&family=Taviraj:wght@500&family=Varela+Round&display=swap");
 
+/* TODO name palatte variable */
+/* .color1 {color: #121824;}
+                 #101f36
+.color2 {color: #12384e;}
+.color3 {color: #146685;}
+.color4 {color: #1da3c7;}
+.color5 {color: #20dad8;} */
+
 * {
   font-family: Prompt;
   font-size: 16px;
@@ -13,4 +21,14 @@ h1 {
 h2 {
   font-family: "Cormorant Garamond";
   font-size: 2.5rem;
+}
+
+.disabledBtn {
+  padding: 7px 35px;
+  outline: none;
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  font-size: 18px;
+  border-radius: 2px;
 }

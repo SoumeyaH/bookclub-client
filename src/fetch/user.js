@@ -13,6 +13,6 @@ export const getUser = async (pathname, body) => {
     return await response.json();
   } catch (err) {
     console.log("error", err.message);
-    throw Error({ message: "Something went wrong. Please try again." });
+    throw Error({ message: "Something went wrong. Please try again later." });
   }
 };

@@ -1,27 +1,6 @@
-/* if theres an error change shadow to
- box-shadow: -10px 5px 5px red; */
-
 .required:after {
   content: " *";
   color: red;
-}
-
-.something {
-  display: flex;
-  justify-content: space-between;
-}
-
-button {
-  margin-left: 25px;
-  border: none;
-  padding: 7px 35px;
-  cursor: pointer;
-  outline: none;
-  background: #45f3ff;
-  color: #000;
-  font-size: 18px;
-  border-radius: 2px;
-  flex-basis: 10%;
 }
 
 .form-container {
@@ -29,9 +8,10 @@ button {
   height: fit-content;
   max-width: 1000px;
   padding: 20px;
-  background: #03080a;
+  background: #101f36;
+  /* background: #121824; */
   border-radius: 5px;
-  box-shadow: -10px 10px 20px #45f3ff96;
+  box-shadow: -10px 10px 20px #20dad8;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -44,12 +24,12 @@ button {
 
 .input-container {
   padding: 0 10px;
-  margin: 30px 0 10px;
+  margin: 30px 0 20px;
   transition: 0.5s;
   position: relative;
-  width: 75%;
+  width: 95%;
   height: 40px;
-  color: #45f3ff;
+  color: #20dad8;
 }
 
 .inputBox {
@@ -78,23 +58,23 @@ button {
   pointer-events: none;
 }
 
-input:focus + .label,
-input:hover + .label,
-.valid-input + .label {
-  top: -35px;
-  left: -10px;
-}
-
 .line {
   position: absolute;
   bottom: 0;
   display: block;
   width: 100%;
   height: 2px;
-  background: #45f3ff;
+  background: #20dad8;
   transition: 0.5s;
   border-radius: 2px;
   pointer-events: none;
+}
+
+input:focus + .label,
+input:hover + .label,
+.valid-input + .label {
+  top: -35px;
+  left: -10px;
 }
 
 input:focus ~ .line,
@@ -103,29 +83,25 @@ input:hover ~ .line,
   height: 100%;
 }
 
-input[type="submit"] {
+.formBtn {
   border: none;
   padding: 7px 35px;
   cursor: pointer;
   outline: none;
-  background: #45f3ff;
+  background: #20dad8;
   color: #000;
   font-size: 18px;
   border-radius: 2px;
 }
 
-/* .color1 {color: #121824;}
-.color2 {color: #12384e;}
-.color3 {color: #146685;}
-.color4 {color: #1da3c7;}
-.color5 {color: #20dad8;} */
+.formBtn:hover {
+  outline: 5px solid #101f36;
+  outline-offset: -7px;
+  cursor: pointer;
+}
 
-@media screen and (max-width: 768px) {
-  .something {
-    flex-direction: column;
-  }
-  .input-container {
-    width: 100%;
-    margin-right: 50px;
-  }
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
 }
