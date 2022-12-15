@@ -16,17 +16,17 @@ const UserEntryForm = ({ pathname }) => {
   const [usernameError, setUsernameError] = useState("");
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
+  const [genericError, setGenericError] = useState("");
   const [forgotUsername, setForgotUsername] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-
-  console.log("submit", submitted);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     setSubmitted(true);
 
-    // TODO error handling - dont hit server if username/email empty or password empty
+    // TODO error handling - dont hit server if username || email empty or password empty
+    // signup has user validation errors if fields empty
     // TODO can users have empty spaces in username/password?
 
     const body = JSON.stringify({
@@ -46,6 +46,7 @@ const UserEntryForm = ({ pathname }) => {
           userId: response.userId,
         })
       );
+
       navigate("/dashboard");
       window.location.reload();
       setSubmitted(true);
@@ -55,6 +56,7 @@ const UserEntryForm = ({ pathname }) => {
       setUsernameError(response.errors.username);
       setEmailError(response.errors.email);
       setPasswordError(response.errors.password);
+      setGenericError(response.errors.generic);
       setSubmitted(false);
       setErrorStyle(true);
     }
@@ -65,6 +67,8 @@ const UserEntryForm = ({ pathname }) => {
       onSubmit={handleSubmit}
       className={`form-container ${errorStyle ? "form-error" : ""}`}
     >
+      {!!genericError && <ErrorMessage message={genericError} />}
+
       {!forgotUsername && (
         <div className="input-container">
           <input

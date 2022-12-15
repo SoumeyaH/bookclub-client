@@ -17,9 +17,3 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
-
-// todo error navbar hiding text
-
-// style inputs and buttons in index css
-//
-// style word link to signup here

@@ -1,0 +1,9 @@
+.logoutBtn {
+  background: red;
+  padding: 0.5rem 1rem;
+  border-radius: 5%;
+}
+
+.logoutBtn:hover {
+  border: 1px solid white;
+}

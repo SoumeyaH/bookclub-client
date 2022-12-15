@@ -1,39 +1,46 @@
 import { Link } from "react-router-dom";
+import { FaHome } from "react-icons/fa";
 
 import { useUserContext } from "../../contexts/UserContext";
 
-import "./styles.css";
+import LogoutBtn from "../LogoutBtn";
+import SearchBar from "../SearchBar";
 
+import "./styles.css";
+// TODO covering pages content
 const NavBar = () => {
   const { user } = useUserContext();
 
   return (
     <nav className="navbar-container">
-      <Link className="link-item" to="/">
-        iconhome
+      <Link to="/">
+        <FaHome className="home-icon" />
       </Link>
 
-      <ul className="link-items-container">
-        <li className="link-item">
-          <Link to="/dashboard">dashboard</Link>
-        </li>
+      {user.token && <SearchBar />}
 
-        {!user.token && (
-          <li className="link-item">
-            <Link to="/login">Login</Link>
-          </li>
-        )}
+      {!user.token && (
+        <Link to="/login" className="login-link">
+          Login
+        </Link>
+      )}
 
-        {user.token && (
+      {user.token && (
+        <ul>
           <li className="link-item">
             {user.username} &#x25BE;
             <ul className="dropdown">
-              <li className="link-item">logout button</li>
+              <li className="link-item">
+                <Link to="/dashboard">dashboard</Link>
+              </li>
+              <li>
+                <LogoutBtn />
+              </li>
               <li className="link-item delete-user">delete account</li>
             </ul>
           </li>
-        )}
-      </ul>
+        </ul>
+      )}
     </nav>
   );
 };

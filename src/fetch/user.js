@@ -12,7 +12,11 @@ export const getUser = async (pathname, body) => {
 
     return await response.json();
   } catch (err) {
-    console.log("error", err.message);
-    throw Error({ message: "Something went wrong. Please try again later." });
+    // console.log("error", err.message);
+    return {
+      errors: {
+        generic: "Something went wrong. Please try again later.",
+      },
+    };
   }
 };

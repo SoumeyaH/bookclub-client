@@ -8,16 +8,27 @@
   height: 5rem;
   background: #101f36;
   list-style: none;
+  color: #fff;
+  padding: 1.5rem;
 }
 
-.link-items-container {
-  flex-basis: 50%;
-  display: flex;
-  justify-content: space-evenly;
+.home-icon {
+  font-size: 1.5rem;
+}
+
+.login-link {
+  background: rgb(251, 251, 89);
+  color: black;
+  padding: 0.5rem;
+  border-radius: 20%;
+}
+
+.login-link:hover {
+  /* todo add shadow effect */
+  border: 1px solid white;
 }
 
 .link-item {
-  color: #fff;
   text-align: center;
   margin: 0.5rem;
   padding: 0.5rem;
@@ -30,25 +41,13 @@
   background: #1e3c68;
 }
 
-ul li a {
-  display: block;
-  padding: 20px 25px;
-  color: #fff;
-  text-decoration: none;
-  text-align: center;
-  font-size: 20px;
-}
-
-ul li ul.dropdown li {
-  display: block;
-}
-
 .dropdown {
-  width: 150%;
+  width: fit-content;
   background: #101f36;
   position: absolute;
   display: none;
   margin-top: 0.5rem;
+  left: -20px;
 }
 
 .link-item:hover .dropdown {
@@ -57,4 +56,11 @@ ul li ul.dropdown li {
 
 .delete-user {
   border-top: 1px solid grey;
+}
+
+@media only screen and (max-width: 400px) {
+  .navbar-container {
+    flex-direction: column;
+    height: fit-content;
+  }
 }

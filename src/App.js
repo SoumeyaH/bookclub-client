@@ -6,6 +6,7 @@ import LoginPage from "./pages/Login";
 import DashboardPage from "./pages/Dashboard";
 import ProtectedRoutes from "./utils/ProtectedRoutes";
 import NavBar from "./components/Navbar";
+import SearchBooks from "./pages/SearchBooks";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route element={<ProtectedRoutes />}>
               <Route path="/dashboard" element={<DashboardPage />} />
+              <Route path="/books/search" element={<SearchBooks />} />
             </Route>
           </Routes>
         </UserContextProvider>

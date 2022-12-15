@@ -105,3 +105,13 @@ input:hover ~ .line,
   justify-content: space-between;
   margin: 10px;
 }
+
+@media only screen and (max-width: 400px) {
+  .btn-container {
+    flex-direction: column;
+  }
+
+  .formBtn {
+    margin-bottom: 0.5rem;
+  }
+}
